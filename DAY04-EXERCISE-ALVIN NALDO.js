@@ -75,19 +75,25 @@ console.log(removeOdd([1, 2, 6, 8, 10, 25, 23, 2]));
 
 // Split Function Manual
 
-function split(kata) {
+function split(kata, separator) {
   let listKata = [];
   let listIndexSpasi = [];
   let x = 0;
-  for (i = 0; i < kata.length; i++) {
-    if (kata[i].includes(" ")) {
-      listIndexSpasi.push(i);
+  if (separator !== "") {
+    for (i = 0; i < kata.length; i++) {
+      if (kata[i].includes(separator)) {
+        listIndexSpasi.push(i);
+      }
     }
-  }
-  for (i = 0; i < listIndexSpasi.length + 1; i++) {
-    listKata.push(kata.slice(x, listIndexSpasi[i]));
-    x = listIndexSpasi[i] + 1; // ditambah 1 karena ada spasi didepan kata kedua
+    for (i = 0; i < listIndexSpasi.length + 1; i++) {
+      listKata.push(kata.slice(x, listIndexSpasi[i]));
+      x = listIndexSpasi[i] + 1; // ditambah 1 karena ada spasi didepan kata kedua
+    }
+  } else if (separator === "") {
+    for (i = 0; i < kata.length; i++) {
+      listKata.push(kata[i]);
+    }
   }
   return listKata;
 }
-console.log(split("Hello World Test"));
+console.log(split("Hello World Test", "l"));
