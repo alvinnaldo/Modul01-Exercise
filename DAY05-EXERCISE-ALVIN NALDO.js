@@ -70,7 +70,7 @@ function split(kata, separator) {
         listIndexSpasi.push(i);
       }
     }
-    for (i = 0; i < listIndexSpasi.length + 1; i++) {
+    for (i = 0; i <= listIndexSpasi.length; i++) {
       listKata.push(kata.slice(x, listIndexSpasi[i]));
       x = listIndexSpasi[i] + 1; // ditambah 1 karena ada spasi didepan kata kedua
     }
