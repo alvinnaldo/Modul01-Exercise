@@ -69,7 +69,7 @@ function reversekeys(arr) {
   let result = [];
   let newobj = {};
   for (i = 0; i < arr.length; i++) {
-    for (j = 0; j < Object.keys(array[i]).length; j++) {
+    for (j = 0; j < Object.keys(arr[i]).length; j++) {
       newobj[Object.values(arr[i])[j]] = Object.keys(arr[i])[j];
     }
     result.push(newobj);
