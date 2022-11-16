@@ -77,7 +77,8 @@ console.log(
     Process :
     1. Create FOR LOOP to loop all the array index
     2. Use conditional IF to check if the return value of the callback function has the same index with the element in the array
-    3. If the condition is true, then return the index
+    3. If the condition is TRUE, then return the index and BREAK the loop
+    4. If the condition is FALSE, then return -1 as falsy value
     
     Output : index of the element that we searched
 */
@@ -86,7 +87,9 @@ function duplicateFindIndexOf(arr, cbfn) {
   for (i = 0; i < arr.length; i++) {
     if (cbfn(arr[i])) {
       return i;
-    }
+      break;
+    } else {
+      return -1
   }
 }
 console.log(
