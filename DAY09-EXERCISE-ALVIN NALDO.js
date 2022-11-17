@@ -30,7 +30,7 @@ console.log(reverse("hello"));
 
 function duplicateMap(arr, cbfn) {
   for (i = 0; i < arr.length; i++) {
-    arr[i] = cbfn(arr[i]);
+    arr[i] = cbfn(arr[i], i);
   }
   return arr;
 }
@@ -38,7 +38,13 @@ function duplicateMap(arr, cbfn) {
 console.log(
   duplicateMap(["bulat", "bulat", "bulat", "bulat"], (element) => "persegi")
 );
-console.log(duplicateMap([1, 3, 5], (element) => element * 2));
+console.log(duplicateMap([1, 3, 5], (element) => element > 3));
+console.log(
+  duplicateMap(
+    ["monyet", "kucing", "anjing", "nyamuk"],
+    (element, index) => index + 1 + ". " + element
+  )
+);
 
 /*
     Title : Duplicate function filter
@@ -68,6 +74,9 @@ console.log(
     ["bulat", "persegi", "persegi", "persegi"],
     (element) => element === "persegi"
   )
+);
+console.log(
+  duplicateFilter([1, 3, 6, 7, 9, 11, 17, 18], (element) => element % 2 !== 0)
 );
 
 /*
