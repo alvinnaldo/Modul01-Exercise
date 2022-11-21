@@ -130,3 +130,13 @@ function removeOdd(arr) {
   return newArr;
 }
 console.log(removeOdd([1, 2, 6, 8, 10, 25, 23, 2]));
+
+module.exports = {
+  getResultSort,
+  getResult,
+  concatString,
+  split,
+  calculate,
+  addElement,
+  removeOdd,
+};
