@@ -4,7 +4,7 @@ class Queue {
   execute() {
     let i = 0;
     while (i < this.#file.length) {
-      let time = Math.floor(Math.random() * 10000) + 1000;
+      let time = Math.floor(Math.random() * (10000 - 1000) + 1000); // Math.random * (max-min) + min
       let executePromise = new Promise((resolve, reject) => {
         let count = 0;
         while (count < 100) {
@@ -46,7 +46,7 @@ class Queue {
   }
 
   printAfterProcess() {
-    setTimeout(() => this.print(), 10000);
+    setTimeout(() => this.print(), 11000);
   }
 }
 
@@ -55,6 +55,7 @@ queue.enQueue("Ayam Goreng");
 queue.enQueue("Spaghetti");
 queue.enQueue("Sate Padang");
 queue.enQueue("Soto Ayam");
+queue.enQueue("Kari Ayam");
 queue.print();
 queue.execute();
-queue.printAfterProcess(); // untuk cek apakah queue sudah kosong
+// queue.printAfterProcess(); // untuk cek apakah queue sudah kosong
